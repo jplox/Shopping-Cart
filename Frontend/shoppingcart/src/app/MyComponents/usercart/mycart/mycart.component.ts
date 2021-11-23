@@ -17,7 +17,7 @@ export class MycartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems.forEach(item =>{
-
+      this.cartTotal +=  (item.qty * item.price)
     })
   }
 
