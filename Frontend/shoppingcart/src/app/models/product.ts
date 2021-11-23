@@ -3,13 +3,13 @@ export class Product {
     name : string
     description : string
     price : number
-    imageurl : string
+    imageUrl : string
 
-    constructor(id,name , description = '' , price = 0 , imageurl = "https://cdn.shopify.com/s/files/1/0441/7683/4722/products/lays-oregano_3_1.jpg?v=1615560218"){
+    constructor(id , name , description = '' , price = 0 , imageUrl = "https://www.jiomart.com/images/product/original/490000331/lay-s-magic-masala-potato-chips-52-g-0-20210406.jpg"){
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.imageurl = imageurl;
+        this.imageUrl = imageUrl;
     }
 }
