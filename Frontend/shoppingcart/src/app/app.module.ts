@@ -13,6 +13,7 @@ import { FiltersComponent } from './MyComponents/usercart/filters/filters.compon
 import { ProductslistComponent } from './MyComponents/usercart/productslist/productslist.component';
 import { CartIteamsComponent } from './MyComponents/usercart/mycart/cart-iteams/cart-iteams.component';
 import { ProductItemsComponent } from './MyComponents/usercart/productslist/product-items/product-items.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ProductItemsComponent } from './MyComponents/usercart/productslist/prod
     ProductslistComponent,
     CartIteamsComponent,
     ProductItemsComponent,
+    
    
 
   
