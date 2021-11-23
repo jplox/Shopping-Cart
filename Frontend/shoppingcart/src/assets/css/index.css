@@ -206,6 +206,7 @@
   /*  */
   body {
     font-family: "Poppins", sans-serif;
+    overflow-x:hidden;
   }
   
   .navbar {
@@ -258,7 +259,7 @@
   }
   
   .col-2 img {
-    max-width: 100%;
+    max-width: 160%;
     padding: 50px 0;
   }
   
@@ -279,7 +280,7 @@
   }
   
   .btn:hover {
-    background: #563434;
+    background: #dad8d8;
   }
   
   .header {
@@ -372,7 +373,7 @@
   }
   
   .col-2 .offer-img {
-    padding: 50px;
+    padding: 0px;
   }
   
   small {
@@ -403,13 +404,13 @@
   }
   
   .col-5 img {
-    width: 100%;
+    width: 50%;
     cursor: pointer;
     filter: grayscale(100%);
   }
   
   .col-5 img:hover {
-    width: 100%;
+    width: 50%;
     cursor: pointer;
     filter: grayscale(0);
   }
@@ -775,4 +776,30 @@
       display: none;
     }
   }
+  .mylinks{
+    text-decoration: none;
+    color: black;
+  }
   
+
+  .cart-item{
+    font-size: small;
+  }
+  .filters{
+    font-size: small;
+  }
+  .card , .form-control{
+    border-radius: 0%;
+  }
+  .list-group-item:first-child{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .list-group-item:last-child{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .product-btn{
+    font-size: smaller;
+  }

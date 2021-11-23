@@ -46,7 +46,7 @@
           <input type="password" name="confirmPassword" id="confirmPassword" (keyup)="onkey($event, 'confirmPassword')"/>
           <p *ngIf="!valid.password" class="error-msg">Password Incorrect*</p>
         </div>
-        <button type="submit" name="submit" class="auth-btn" >Register</button>
+        <button type="submit" name="submit" class="auth-btn"  routerLink="/usercart">Register</button>
       </form>
       <div class="auth-bottom">
          Have an account yet? <a href="" routerLink="/login" routerLinkActive="active" >Login Now</a>

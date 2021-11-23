@@ -7,14 +7,28 @@ import { LandingPageComponent } from './MyComponents/landing-page/landing-page.c
 import { LoginComponent } from './MyComponents/login/login.component';
 import { RegisterComponent } from './MyComponents/register/register.component';
 import { PageNotFoundComponent } from './MyComponents/page-not-found/page-not-found.component';
-
+import { UsercartComponent } from './MyComponents/usercart/usercart.component';
+import { MycartComponent } from './MyComponents/usercart/mycart/mycart.component';
+import { FiltersComponent } from './MyComponents/usercart/filters/filters.component';
+import { ProductslistComponent } from './MyComponents/usercart/productslist/productslist.component';
+import { CartIteamsComponent } from './MyComponents/usercart/mycart/cart-iteams/cart-iteams.component';
+import { ProductItemsComponent } from './MyComponents/usercart/productslist/product-items/product-items.component';
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LoginComponent,
     RegisterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UsercartComponent,
+    MycartComponent,
+    FiltersComponent,
+    ProductslistComponent,
+    CartIteamsComponent,
+    ProductItemsComponent,
+   
+
+  
   ],
   imports: [
     BrowserModule,

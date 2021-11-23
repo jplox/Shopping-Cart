@@ -4,12 +4,15 @@ import { LandingPageComponent } from './MyComponents/landing-page/landing-page.c
 import { LoginComponent } from './MyComponents/login/login.component';
 import { PageNotFoundComponent } from './MyComponents/page-not-found/page-not-found.component';
 import { RegisterComponent } from './MyComponents/register/register.component';
+import { UsercartComponent } from './MyComponents/usercart/usercart.component';
+
 
 const routes: Routes = [
   {path:"" , component:LandingPageComponent},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
-  { path: '**', component:PageNotFoundComponent }
+  {path:"usercart", component:UsercartComponent},
+  { path: '**', component:PageNotFoundComponent },
 ];
 
 @NgModule({
