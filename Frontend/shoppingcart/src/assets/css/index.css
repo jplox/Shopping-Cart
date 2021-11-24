@@ -280,7 +280,12 @@
   }
   
   .btn:hover {
-    background: #dad8d8;
+    background: #9e9c9c;
+    /* border-radius: 25px; */
+    
+  }
+  .land:hover{
+    border-radius: 500px;
   }
   
   
@@ -817,3 +822,9 @@
   border-radius: 100px;
 }
 
+.brands{
+  text-align: center;
+  font-size: 50px;
+}
+
+/*  */

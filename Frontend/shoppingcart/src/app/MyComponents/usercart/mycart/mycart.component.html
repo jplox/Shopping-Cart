@@ -4,11 +4,11 @@
     <li class="list-group-iteam" *ngFor="let item of cartItems" >
         <app-cart-iteams [cartItem]= "item"></app-cart-iteams>
     </li>
-    <li class="list-group-item active">
+    <button class="list-group-item active">
      <strong>Total{{cartTotal |currency:"INR"}}</strong> 
-    </li>
+    </button>
     <button class="btn btn-danger" (click)="removeItem()">
-        <strong>Empty Your Cart</strong> 
+        Empty Your Cart
        </button>
 </ul>
 </div>
