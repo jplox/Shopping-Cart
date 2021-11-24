@@ -20,8 +20,7 @@ export class MycartComponent implements OnInit {
     this.msg.getMsg().subscribe((product: Product) =>{
       // console.log(product)
       this.addProductToCart(product)
-    })  
-   
+    })     
   }
   
    addProductToCart(product: Product){
@@ -47,7 +46,7 @@ export class MycartComponent implements OnInit {
     })
 
    }
-     removeItem(){
+     removeAllItem(){
        this.cartItems = []
      }
    }

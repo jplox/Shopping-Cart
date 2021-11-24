@@ -11,5 +11,4 @@ export class CartIteamsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

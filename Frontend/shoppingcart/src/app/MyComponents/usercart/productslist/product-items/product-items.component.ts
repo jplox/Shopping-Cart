@@ -9,7 +9,7 @@ import { MessengerService } from 'src/app/services/messenger.service';
 })
 export class ProductItemsComponent implements OnInit {
   @Input()productItem : Product
-  @Input() cartItem : any
+  @Input()cartItem : any
 
 
   constructor(private msg: MessengerService) { }
@@ -20,6 +20,8 @@ export class ProductItemsComponent implements OnInit {
    handleAddToCart(){
      this.msg.sendMsg(this.productItem)  // sends the current item
    }
-   
+   handleRemoveToCart(){
+     this.msg.sendMsg(this.productItem)
+   }
    
 }
