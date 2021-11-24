@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+//This is the UserController Which Manages All Operations Of Users by Interacting with UserService Class
+
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,19 +18,20 @@ namespace ItemsWebAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly Iuserservice _uservalidation;
-
+        //Constructor for UserController 
         public UserController(Iuserservice _userservice)
         {
             _uservalidation = _userservice;
         }
-
+        //This method returns all Users by interacting with Database through Method in UserService class
         [HttpGet, Route("api/User/GetUsers")]
         public IEnumerable<User> GetUsers()
         {
             return _uservalidation.GetAllUsers();
         }
 
-        [HttpGet,Route("api/User/GetPassword/{_emailId}")]
+        //This method returns all Password Of Respective User By using user's EmailId through Method in UserService class
+        [HttpGet,Route("api/User/GetPassword")]
         public string GetPassword(string _emailId)
         {
             IEnumerable<User> _userlist = _uservalidation.GetAllUsers();
@@ -42,8 +46,10 @@ namespace ItemsWebAPI.Controllers
             }
         }
 
-        [HttpGet, Route("api/User/RegisterNewuser/{FirstName}/{LastName}/{emailId}/{Mobileno}/{Password}")]
-      //  [HttpPost, ActionName("api/User/RegisterNewuser")]
+
+        //This Method Inserts New User Into users DataBase By using Method in UserService
+        [HttpPost, Route("api/User/RegisterNewuser")]
+     
         public IEnumerable<User> RegisterNewuser(User _newuser)
         {
             if (_uservalidation.RegisterNewUser(_newuser))
@@ -52,8 +58,8 @@ namespace ItemsWebAPI.Controllers
             }
             return Enumerable.Empty<User>();
         }
-
-        [HttpGet, Route("api/User/LoginUser/{_emailid}/{_password}")]
+        //This Method Validates User And Returns true for Successful validation
+        [HttpGet, Route("api/User/LoginUser")]
         public bool LoginUser(string _emailid,string _password)
         {
             if ((_uservalidation.LoginToNextPage(_emailid, _password)))
@@ -61,6 +67,15 @@ namespace ItemsWebAPI.Controllers
                 return true;
             }
             return false;
+        }
+        [HttpPatch,Route("api/User/resetpassword")]
+        public string resetpassword(string emailId,string oldpassword,string newpassword)
+        {
+            if (_uservalidation.ResetPassword(emailId, oldpassword, newpassword))
+            {
+                return "Password Updated Successfully";
+            }
+            return "Password not Updated";
         }
     }
 }

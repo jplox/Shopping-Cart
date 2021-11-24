@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This class contain Methods of All User operations
+//Each Method Performs Each operations , these operations will be executed through User controller 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using ItemWebApi.Itemclass;
@@ -119,6 +122,35 @@ namespace ItemsWebApi.UserValidation
                 if (_sqlConnection.State == System.Data.ConnectionState.Closed)
                     _sqlConnection.Open();
 
+
+                _sqlCommand.ExecuteNonQuery();
+
+                _isSuccess = true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+            finally
+            {
+                if (_sqlConnection.State == System.Data.ConnectionState.Open)
+                    _sqlConnection.Close();
+            }
+            return _isSuccess;
+        }
+       public bool ResetPassword(string _EmailId, string _oldpassword, string _newpassword)
+        {
+            
+            bool _isSuccess = false;
+            
+            try
+            { 
+                _sqlCommand = new SqlCommand($"Update Registration SET Password1='{_newpassword}' where EmailId='{_EmailId}' and Password1='{_oldpassword}'", _sqlConnection);         
+
+                if (_sqlConnection.State == System.Data.ConnectionState.Closed)
+                    _sqlConnection.Open();
 
                 _sqlCommand.ExecuteNonQuery();
 
