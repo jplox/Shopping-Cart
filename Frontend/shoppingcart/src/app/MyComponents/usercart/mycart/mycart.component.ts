@@ -18,13 +18,13 @@ export class MycartComponent implements OnInit {
 
   ngOnInit(): void {
     this.msg.getMsg().subscribe((product: Product) =>{
-      console.log(product)
+      // console.log(product)
       this.addProductToCart(product)
-    })
-    
+    })  
+   
   }
+  
    addProductToCart(product: Product){
-
    let productExist = false;
    for(let i in this.cartItems){ // checking if the cart components contains repeated components
     if(this.cartItems[i].productId === product.id){
@@ -47,4 +47,8 @@ export class MycartComponent implements OnInit {
     })
 
    }
-}
+     removeItem(){
+       this.cartItems = []
+     }
+   }
+

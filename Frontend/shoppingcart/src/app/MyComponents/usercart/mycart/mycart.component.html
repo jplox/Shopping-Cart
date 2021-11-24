@@ -5,8 +5,11 @@
         <app-cart-iteams [cartItem]= "item"></app-cart-iteams>
     </li>
     <li class="list-group-item active">
-     <strong>Total{{cartTotal |currency:"INR"}}</strong>
+     <strong>Total{{cartTotal |currency:"INR"}}</strong> 
     </li>
+    <button class="btn btn-danger" (click)="removeItem()">
+        <strong>Empty Your Cart</strong> 
+       </button>
 </ul>
 </div>
 
